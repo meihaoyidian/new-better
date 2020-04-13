@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>个人博客</title>
-    <updated>2020-04-13T11:25:13.374Z</updated>
+    <updated>2020-04-13T11:42:08.153Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://actionlefe.top/images/avatar.png</logo>
     <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[编写TestCase工具：xmind2testcase]]></title>
+        <id>https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/</id>
+        <link href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
+        </link>
+        <updated>2020-04-13T11:36:23.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="安装升级">安装&amp;升级</h3>
+<pre><code>pip3 install -u xmind2testcase
+</code></pre>
+<h3 id="基本使用">基本使用</h3>
+<pre><code># 命令行调用
+Usage:
+ xmind2testcase [path_to_xmind_file] [-csv] [-xml] [-json]
+
+Example:
+ xmind2testcase /path/to/testcase.xmind        =&gt; output testcase.csv、testcase.xml、testcase.json
+ xmind2testcase /path/to/testcase.xmind -csv   =&gt; output testcase.csv
+ xmind2testcase /path/to/testcase.xmind -xml   =&gt; output testcase.xml
+ xmind2testcase /path/to/testcase.xmind -json  =&gt; output testcase.json
+ 
+# web界面
+xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自定义端口
+</code></pre>
+<ul>
+<li>xmind导入禅道二次优化后文件夹</li>
+</ul>
+<pre><code># 替换路径为
+/Users/xxx/.pyenv/versions/py3.6.3/lib/python3.6/site-packages
+</code></pre>
+<ul>
+<li>xmind导入禅道用例模板<br>
+<img src="https://i.loli.net/2020/04/13/Vo48saf9KUAMviL.jpg" alt="20200413194051.jpg" loading="lazy"></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[centOS7 安装pyenv]]></title>
         <id>https://actionlefe.top/post/centos7-an-zhuang-pyenv/</id>
