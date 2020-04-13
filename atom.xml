@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/meihaoyidian</id>
+    <id>https://actionlefe.top</id>
     <title>个人博客</title>
-    <updated>2020-04-13T07:45:21.647Z</updated>
+    <updated>2020-04-13T07:57:45.265Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/meihaoyidian"/>
-    <link rel="self" href="https://github.com/meihaoyidian/atom.xml"/>
+    <link rel="alternate" href="https://actionlefe.top"/>
+    <link rel="self" href="https://actionlefe.top/atom.xml"/>
     <subtitle>个人博客</subtitle>
-    <logo>https://github.com/meihaoyidian/images/avatar.png</logo>
-    <icon>https://github.com/meihaoyidian/favicon.ico</icon>
+    <logo>https://actionlefe.top/images/avatar.png</logo>
+    <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 个人博客</rights>
     <entry>
         <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
-        <id>https://github.com/meihaoyidian/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
-        <link href="https://github.com/meihaoyidian/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
+        <id>https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
+        <link href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
         </link>
         <updated>2020-04-13T06:33:39.000Z</updated>
         <content type="html"><![CDATA[<h3 id="运行环境">运行环境</h3>
