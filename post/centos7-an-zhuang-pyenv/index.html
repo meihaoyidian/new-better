@@ -2,35 +2,25 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>需求&amp;任务&amp;问题跟踪工平台ActionView | 个人博客</title>
+<title>centOS7 安装pyenv | 个人博客</title>
 <link rel="shortcut icon" href="https://actionlefe.top/favicon.ico?v=1586777075013">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://actionlefe.top/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="需求&amp;任务&amp;问题跟踪工平台ActionView | 个人博客 - Atom Feed" href="https://actionlefe.top/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="centOS7 安装pyenv | 个人博客 - Atom Feed" href="https://actionlefe.top/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="运行环境
+    <meta name="description" content="
+查看centOS7 版本
 
-ubuntu 16.04
-nginx
-php7.0
-mongodb
-
-安装手册&amp;执行
-
-更新软件源列表地址
-
-apt-get update
+cat /etc/redhat-release
 
 
-安装nginx
+创建目录安装pyenv
 
-apt-get install -y nginx
-
-
-安装..." />
+mkdir ~/.pyenv
+git clone git://github.com/yyuu/pyenv.git   ~/.pyen..." />
     <meta name="keywords" content="测试能效" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -93,14 +83,14 @@ apt-get install -y nginx
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              需求&amp;任务&amp;问题跟踪工平台ActionView
+              centOS7 安装pyenv
             </h2>
             <div class="post-info">
               <span>
                 2020-04-13
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
                 <a href="https://actionlefe.top/tag/JP1mXxzeg/" class="post-tag">
@@ -111,155 +101,63 @@ apt-get install -y nginx
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h3 id="运行环境">运行环境</h3>
-<ul>
-<li>ubuntu 16.04</li>
-<li>nginx</li>
-<li>php7.0</li>
-<li>mongodb</li>
+                <ul>
+<li>查看centOS7 版本</li>
 </ul>
-<h3 id="安装手册执行">安装手册&amp;执行</h3>
-<ul>
-<li>更新软件源列表地址</li>
-</ul>
-<pre><code>apt-get update
+<pre><code>cat /etc/redhat-release
 </code></pre>
 <ul>
-<li>安装nginx</li>
+<li>创建目录安装pyenv</li>
 </ul>
-<pre><code>apt-get install -y nginx
+<pre><code>mkdir ~/.pyenv
+git clone git://github.com/yyuu/pyenv.git   ~/.pyenv
 </code></pre>
 <ul>
-<li>安装php以及相关组件&amp;php7.0</li>
+<li>配置环境变量</li>
 </ul>
-<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
+<pre><code>echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc  
+echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc  
+echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc  
+exec $SHELL -l
 </code></pre>
 <ul>
-<li>下载工程</li>
+<li>列出所有版本</li>
 </ul>
-<pre><code>cd /var/www
-git clone https://github.com/meihaoyidian/actionview actionview
+<pre><code>pyenv install --list
 </code></pre>
 <ul>
-<li>安装依赖</li>
+<li>安装python 3.6.3</li>
 </ul>
-<pre><code>cd actionview
-cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
-composer install --no-dev
+<pre><code>pyenv install 3.5.2
 </code></pre>
 <ul>
-<li>执行配置脚本</li>
+<li>全局使用</li>
 </ul>
-<pre><code>sh config.sh
+<pre><code>pyenv global 3.5.2
 </code></pre>
 <ul>
-<li>修改数据库连接，拷贝.env文件</li>
+<li>检查版本😃😃😃</li>
 </ul>
-<pre><code>cp .env.example .env
-
-DB_HOST=127.0.0.1
-DB_DATABASE=actionviewdb
-DB_USERNAME=actionview
-DB_PASSWORD=secret
+<pre><code>python --version
 </code></pre>
-<ul>
-<li>执行db数据初始化脚本</li>
-</ul>
-<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
-</code></pre>
-<ul>
-<li>配置nginx</li>
-</ul>
-<pre><code>vim /etc/nginx/sites-enabled/default
-
-server {
-    listen 80;
-    listen [::]:80;
-
-    root /var/www/actionview/public;
-
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name localhost;
-
-    client_max_body_size 50M;
-
-    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
-
-    set $flag 0;
-    if (!-e $request_filename) { set $flag 1; }
-    if ($request_uri ~ ^/api) { set $flag 2; }
-
-    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
-    if ($flag = 2) { rewrite ^ /index.php break; }
-
-    location ~ /\.ht {
-        deny all;
-    }
-
-    location ~ \.php {
-        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
-        fastcgi_index  index.php;
-        include        fastcgi_params;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
-        try_files $uri =404;
-    }
-}
-</code></pre>
-<ul>
-<li>重新启动nginx&amp;php-fpm</li>
-</ul>
-<pre><code>service php7.0-fpm stop
-service php7.0-fpm start
-service nginx stop
-service nginx start
-</code></pre>
-<ul>
-<li>安装完成访问</li>
-</ul>
-<pre><code>http://xxx.xxx.xxx.xxx
-
-# 管理员登录账号/密码
-admin@action.view
-actionview
-</code></pre>
-<ul>
-<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
-</ul>
-<pre><code># crontab里添加
-* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
-</code></pre>
-<ul>
-<li>重启cron服务</li>
-</ul>
-<pre><code>service cron restart
-</code></pre>
-<h3 id="完成">完成😀😀😀</h3>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83">运行环境</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E6%89%A7%E8%A1%8C">安装手册&amp;执行</a></li>
-<li><a href="#%E5%AE%8C%E6%88%90">完成😀😀😀</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
+              <h3 class="post-title">
+                需求&amp;任务&amp;问题跟踪工平台ActionView
+              </h3>
+            </a>
+          </div>
         
 
         

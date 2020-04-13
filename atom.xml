@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>个人博客</title>
-    <updated>2020-04-13T07:57:45.265Z</updated>
+    <updated>2020-04-13T11:24:38.105Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -10,6 +10,53 @@
     <logo>https://actionlefe.top/images/avatar.png</logo>
     <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[centOS7 安装pyenv]]></title>
+        <id>https://actionlefe.top/post/centos7-an-zhuang-pyenv/</id>
+        <link href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
+        </link>
+        <updated>2020-04-13T11:21:09.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>查看centOS7 版本</li>
+</ul>
+<pre><code>cat /etc/redhat-release
+</code></pre>
+<ul>
+<li>创建目录安装pyenv</li>
+</ul>
+<pre><code>mkdir ~/.pyenv
+git clone git://github.com/yyuu/pyenv.git   ~/.pyenv
+</code></pre>
+<ul>
+<li>配置环境变量</li>
+</ul>
+<pre><code>echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc  
+echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc  
+echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc  
+exec $SHELL -l
+</code></pre>
+<ul>
+<li>列出所有版本</li>
+</ul>
+<pre><code>pyenv install --list
+</code></pre>
+<ul>
+<li>安装python 3.6.3</li>
+</ul>
+<pre><code>pyenv install 3.5.2
+</code></pre>
+<ul>
+<li>全局使用</li>
+</ul>
+<pre><code>pyenv global 3.5.2
+</code></pre>
+<ul>
+<li>检查版本😃😃😃</li>
+</ul>
+<pre><code>python --version
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
         <id>https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
