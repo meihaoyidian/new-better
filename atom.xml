@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/meihaoyidian</id>
     <title>个人博客</title>
-    <updated>2020-04-13T06:31:39.905Z</updated>
+    <updated>2020-04-13T06:45:02.441Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/meihaoyidian"/>
     <link rel="self" href="https://github.com/meihaoyidian/atom.xml"/>
@@ -11,12 +11,138 @@
     <icon>https://github.com/meihaoyidian/favicon.ico</icon>
     <rights>All rights reserved 2020, 个人博客</rights>
     <entry>
-        <title type="html"><![CDATA[测试]]></title>
-        <id>https://github.com/meihaoyidian/post/ce-shi/</id>
-        <link href="https://github.com/meihaoyidian/post/ce-shi/">
+        <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
+        <id>https://github.com/meihaoyidian/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
+        <link href="https://github.com/meihaoyidian/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
         </link>
-        <updated>2020-04-13T03:10:58.000Z</updated>
-        <content type="html"><![CDATA[<p>jdqwdq前雾灯你欠我的</p>
+        <updated>2020-04-13T06:33:39.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="运行环境">运行环境</h3>
+<ul>
+<li>ubuntu 16.04</li>
+<li>nginx</li>
+<li>php7.0</li>
+<li>mongodb</li>
+</ul>
+<h3 id="安装手册执行">安装手册&amp;执行</h3>
+<ul>
+<li>更新软件源列表地址</li>
+</ul>
+<pre><code>apt-get update
+</code></pre>
+<ul>
+<li>安装nginx</li>
+</ul>
+<pre><code>apt-get install -y nginx
+</code></pre>
+<ul>
+<li>安装php以及相关组件&amp;php7.0</li>
+</ul>
+<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
+</code></pre>
+<ul>
+<li>下载工程</li>
+</ul>
+<pre><code>cd /var/www
+git clone https://github.com/meihaoyidian/actionview actionview
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<pre><code>cd actionview
+cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
+composer install --no-dev
+</code></pre>
+<ul>
+<li>执行配置脚本</li>
+</ul>
+<pre><code>sh config.sh
+</code></pre>
+<ul>
+<li>修改数据库连接，拷贝.env文件</li>
+</ul>
+<pre><code>cp .env.example .env
+
+DB_HOST=127.0.0.1
+DB_DATABASE=actionviewdb
+DB_USERNAME=actionview
+DB_PASSWORD=secret
+</code></pre>
+<ul>
+<li>执行db数据初始化脚本</li>
+</ul>
+<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
+</code></pre>
+<ul>
+<li>配置nginx</li>
+</ul>
+<pre><code>vim /etc/nginx/sites-enabled/default
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/actionview/public;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name localhost;
+
+    client_max_body_size 50M;
+
+    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
+
+    set $flag 0;
+    if (!-e $request_filename) { set $flag 1; }
+    if ($request_uri ~ ^/api) { set $flag 2; }
+
+    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
+    if ($flag = 2) { rewrite ^ /index.php break; }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ \.php {
+        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
+        fastcgi_index  index.php;
+        include        fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        try_files $uri =404;
+    }
+}
+</code></pre>
+<ul>
+<li>重新启动nginx&amp;php-fpm</li>
+</ul>
+<pre><code>service php7.0-fpm stop
+service php7.0-fpm start
+service nginx stop
+service nginx start
+</code></pre>
+<ul>
+<li>安装完成访问</li>
+</ul>
+<pre><code>http://xxx.xxx.xxx.xxx
+
+# 管理员登录账号/密码
+admin@action.view
+actionview
+</code></pre>
+<ul>
+<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
+</ul>
+<pre><code># crontab里添加
+* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<ul>
+<li>重启cron服务</li>
+</ul>
+<pre><code>service cron restart
+</code></pre>
+<h3 id="完成">完成😀😀😀</h3>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>

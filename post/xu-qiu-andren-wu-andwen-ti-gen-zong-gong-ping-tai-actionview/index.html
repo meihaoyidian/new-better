@@ -1,0 +1,314 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>需求&amp;任务&amp;问题跟踪工平台ActionView | 个人博客</title>
+<link rel="shortcut icon" href="https://github.com/meihaoyidian/favicon.ico?v=1586760298067">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://github.com/meihaoyidian/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="需求&amp;任务&amp;问题跟踪工平台ActionView | 个人博客 - Atom Feed" href="https://github.com/meihaoyidian/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="运行环境
+
+ubuntu 16.04
+nginx
+php7.0
+mongodb
+
+安装手册&amp;执行
+
+更新软件源列表地址
+
+apt-get update
+
+
+安装nginx
+
+apt-get install -y nginx
+
+
+安装..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://github.com/meihaoyidian">
+  <img class="avatar" src="https://github.com/meihaoyidian/images/avatar.png?v=1586760298067" alt="">
+  </a>
+  <h1 class="site-title">
+    个人博客
+  </h1>
+  <p class="site-description">
+    个人博客
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              需求&amp;任务&amp;问题跟踪工平台ActionView
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-13
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="运行环境">运行环境</h3>
+<ul>
+<li>ubuntu 16.04</li>
+<li>nginx</li>
+<li>php7.0</li>
+<li>mongodb</li>
+</ul>
+<h3 id="安装手册执行">安装手册&amp;执行</h3>
+<ul>
+<li>更新软件源列表地址</li>
+</ul>
+<pre><code>apt-get update
+</code></pre>
+<ul>
+<li>安装nginx</li>
+</ul>
+<pre><code>apt-get install -y nginx
+</code></pre>
+<ul>
+<li>安装php以及相关组件&amp;php7.0</li>
+</ul>
+<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
+</code></pre>
+<ul>
+<li>下载工程</li>
+</ul>
+<pre><code>cd /var/www
+git clone https://github.com/meihaoyidian/actionview actionview
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<pre><code>cd actionview
+cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
+composer install --no-dev
+</code></pre>
+<ul>
+<li>执行配置脚本</li>
+</ul>
+<pre><code>sh config.sh
+</code></pre>
+<ul>
+<li>修改数据库连接，拷贝.env文件</li>
+</ul>
+<pre><code>cp .env.example .env
+
+DB_HOST=127.0.0.1
+DB_DATABASE=actionviewdb
+DB_USERNAME=actionview
+DB_PASSWORD=secret
+</code></pre>
+<ul>
+<li>执行db数据初始化脚本</li>
+</ul>
+<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
+</code></pre>
+<ul>
+<li>配置nginx</li>
+</ul>
+<pre><code>vim /etc/nginx/sites-enabled/default
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/actionview/public;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name localhost;
+
+    client_max_body_size 50M;
+
+    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
+
+    set $flag 0;
+    if (!-e $request_filename) { set $flag 1; }
+    if ($request_uri ~ ^/api) { set $flag 2; }
+
+    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
+    if ($flag = 2) { rewrite ^ /index.php break; }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ \.php {
+        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
+        fastcgi_index  index.php;
+        include        fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        try_files $uri =404;
+    }
+}
+</code></pre>
+<ul>
+<li>重新启动nginx&amp;php-fpm</li>
+</ul>
+<pre><code>service php7.0-fpm stop
+service php7.0-fpm start
+service nginx stop
+service nginx start
+</code></pre>
+<ul>
+<li>安装完成访问</li>
+</ul>
+<pre><code>http://xxx.xxx.xxx.xxx
+
+# 管理员登录账号/密码
+admin@action.view
+actionview
+</code></pre>
+<ul>
+<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
+</ul>
+<pre><code># crontab里添加
+* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<ul>
+<li>重启cron服务</li>
+</ul>
+<pre><code>service cron restart
+</code></pre>
+<h3 id="完成">完成😀😀😀</h3>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83">运行环境</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E6%89%A7%E8%A1%8C">安装手册&amp;执行</a></li>
+<li><a href="#%E5%AE%8C%E6%88%90">完成😀😀😀</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  
+  <a class="rss" href="https://github.com/meihaoyidian/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
