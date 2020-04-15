@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
-    <title>bitBetter个人博客</title>
-    <updated>2020-04-15T06:10:45.180Z</updated>
+    <title>bitBette个人博客</title>
+    <updated>2020-04-15T06:11:30.729Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
     <subtitle>个人博客</subtitle>
     <logo>https://actionlefe.top/images/avatar.png</logo>
     <icon>https://actionlefe.top/favicon.ico</icon>
-    <rights>All rights reserved 2020, bitBetter个人博客</rights>
+    <rights>All rights reserved 2020, bitBette个人博客</rights>
     <entry>
         <title type="html"><![CDATA[测试流程管理]]></title>
         <id>https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/</id>
