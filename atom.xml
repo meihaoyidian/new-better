@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>bitBetter</title>
-    <updated>2020-04-15T06:20:47.061Z</updated>
+    <updated>2020-04-15T06:21:58.804Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -15,102 +15,6 @@
         <link href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
         </link>
         <updated>2020-04-15T01:31:32.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
-<h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
-<ul>
-<li>建立测试规范、宣贯团队成员、团队培训计划
-<ul>
-<li>测试的基础知识进行宣贯，将测试计划、用例编写、业务沉淀、测试工具使用、checklist等与绩效挂钩</li>
-</ul>
-</li>
-<li>开始培养团队成员代码能力
-<ul>
-<li>搭建、编写好接口测试框架、UI自动化测试框架，编写测试框架使用文档，进行针对性的培训、分享</li>
-</ul>
-</li>
-<li>针对性测试工具的改造/开发
-<ul>
-<li>同样也是先搭建好基础框架，然后一样的套路进行使用文档、培训、分享。经过上一步自动化代码的铺垫，都有了基础的代码能力，再经过一些培训、指导，在一个已有的框架基础上根据自己的业务需求写一些测试工具或者进行测试工具的二次改造。</li>
-</ul>
-</li>
-</ul>
-<h3 id="制定测试流程">制定测试流程</h3>
-<ul>
-<li>
-<p>为什么要制定测试流程？如何制定测试流程？</p>
-<ul>
-<li>起到总览性的作用，指导测试人员在一个项目测试各个环节过程中需要做哪些事情，一般会涉及到需求分析、测试计划、测试范围界定、测试用例设计、用例评审、冒烟测试、一轮测试（功能、接口、性能等）、二轮测试、预发验证、线上验证。各阶段的准入条件是什么？各阶段完成的定义是什么？如果准入条件没有或者没有达到，那当前阶段所花的时间、精力就可能远超预估</li>
-<li>帮助新人尽可能快速了解测试项目如何运转，融入团队</li>
-<li>没有测试流程的话，测试工作将杂乱无章，测试什么时候介入、会经历哪些阶段，每个阶段什么时候开始、什么时候结束，各阶段完成的定义是什么等等这些问题都没有答案</li>
-<li><strong>测试流程如下</strong><br>
-<img src="https://i.loli.net/2020/04/15/7jxocKQutMqn8sI.png" alt="Lark20200415135513.png" loading="lazy"></li>
-<li>测试规范设计到测试用例规范、Bug规范、Bug生命周期、测试计划、日总结规范
-<ul>
-<li>培养成员，让测试人员对测试工作有个基础认识，有好的测试思维</li>
-<li>便于一些数据的统计</li>
-<li>规范、模板制定了，所有人都能编写出高质量的测试文档，照着模板填空就行</li>
-</ul>
-</li>
-</ul>
-<h3 id="团队人才的管理">团队人才的管理</h3>
-<ul>
-<li>关注
-<ul>
-<li>关注团队成员，了解他们的性格特点、爱好、技术特长、沟通能力、合作能力，这样可以帮助我们“因材施教”。性格是很重要的一点，了解性格后我们可以在沟通的时候避免踩雷。比如有些人比较放的开，那开些玩笑什么的无所谓。而有的人比较敏感，在这类人面前说话得注意分寸，把握好度。有些人沟通能力差，容易情绪化、发火，这类人应尽量减少他们跟外部团队的合作，或者在他们跟外部合作的时候你需要多关注些，不然很可能得罪人</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>定期会议</p>
-<ul>
-<li>定期会议可以采用自由形式，让每个人自由地表达，会上可以准备些水果、茶点，营造轻松的氛围，让每个人都畅所欲言，以了解他们最近的情况，包括心情。会议可以让每个人说下自己最近的工作，哪些做得好，哪些不好，如何改进。另外，定期会议是个听取意见或建议的好时机。一定要用开放的心态去听取听取了也要有行动去改进，这样成员才能保持提意见或建议的激情，积极参与团队建设，有主人翁精神。千万不要让成员提完意见但是从来就不改，那以后你也别怪人家消极，这都是你自己导致的</li>
-</ul>
-</li>
-<li>
-<p>人员培养及晋升通道</p>
-<ul>
-<li>结合他们自己的意愿，制定发展发向——如接口测试、性能测试、UI 自动化、测试策略等等，落实到绩效考核里面，关键结果明确。有绩效考核就会有压力，有压力才会有动力去实现，突破自我</li>
-<li>作为团队管理者，还有一个很重要的职责，就是如何帮助成员晋升。对比分析成员当前所在级别与上一级别之间的差距，还存在哪些不足，与晋升标准项一一对比，帮其分析出差异 list，然后列入到成员的绩效目标中（在绩效定下来之前需要征得其同意），在接下来的时间里，加以辅导，以帮助成员尽快达到晋升标准。在成员有晋升资格时，在晋升评审前，先帮他们看下 PPT，先把下关</li>
-</ul>
-</li>
-<li>
-<p>团建</p>
-</li>
-<li>
-<p>招聘</p>
-<ul>
-<li>明确招聘需求：招聘时要衡量好目前的短板是什么？需求是什么？如果缺少执行层的人，那就招实习生或刚毕业的就行。如果缺某一方向的人，那就需要招一个该方向有几年经验的。根据自己的需求去发布招聘信息。一个团队的人员组成最好是金字塔型的。金字塔上一层的人可以指导下一层人的工作</li>
-<li>面试准备：在面试前先了解侯选了，仔细看简历，提前做好准备，将想要了解的信息、要问的问题列出来，简历中列到自己不熟悉的领域，可以提前了解下，以免面试时不知对方所云</li>
-<li>面试： 进门后先问好，确认对方是侯选人，再自我介绍一下，然后就可以让对方做自我介绍，正式进入面试了。面试过程中，记得做些记录。面试差不多后，向对方介绍下公司及目前所做的项目。最后问下对方有没有什么问题，有什么想要了解的。这是面试的一些基本礼仪吧，会让对方对公司有个好印象</li>
-</ul>
-</li>
-</ul>
-<h3 id="测试技术风向标">测试技术风向标</h3>
-<ul>
-<li>
-<p>作为一个测试团队的管理者，要使下面的人信服，首要条件就是要有够硬的技术，能在成员遇到难题时协助他们解决或者提供解决思路，让成员在你的带领下可以不断地成长。当然也不是要求你什么都会，你可以通过团队所有成员形成技术闭环，使团队良性发展，<strong>如下图</strong><br>
-<img src="https://i.loli.net/2020/04/15/uBgWxJCYm2KTSVk.png" alt="Lark20200415135937.png" loading="lazy"></p>
-</li>
-<li>
-<p>专项组向各个业务组输出技术及支持，专项组的成员包括专职的性能测试工程师、接口测试工程师、UI 自动化测试工程师等，他们属于测试部门各自领域的“专家”，各自负责其对应的测试框架的开发及知识输出，输出到各业务团队。作为管理者，需要思考如何打造这样一个团队，可以通过内部培养，也可以通过人才招聘</p>
-</li>
-</ul>
-<h3 id="关于绩效">关于绩效</h3>
-<ul>
-<li>
-<p>季度/年初制定绩效目标，同级别的成员绩效差异不大，以求做到公平。过程中根据实际情况调整一次，季末/年底评定绩效。在这过程中，对于垫底的同学，需要及时给出提醒，并提供改进意见或改进计划。千万不要中间一直不关注、不督促，到年底的时候再给他打个垫底的，那这是你的工作不到位，对方也会不服</p>
-</li>
-<li>
-<p>绩效评定后就是谈话，好的当然好谈，大家都高兴。差的就要讲究谈话技巧，首先肯定他的工作，这季度/年度做了哪些事情、哪些表现好（所以平时要多了解成员的工作）。最后还是要谈到关键点，为什么给他这个分。要说明这不是某一个人的主观意见导致的，而是横向比对、绩效的关键结果、环评（各类与之有合作的人评定）出来的。最后再就是告知对方，根据这个结果我们会给你制定改进计划，观察期 x 个月等等，让他知道团队没有放弃他。当然，最后是去是留我们都尊重他</p>
-</li>
-</ul>
-<h3 id="如何向上汇报">如何向上汇报</h3>
-<ul>
-<li>在日常的向上汇报中（不限形式），对于表现优秀的成员 要及时向上反馈，用事实说话，刷存在感，这样可以帮助团队成员在上级领导面前建立良好的印象，有助其晋升。因为你是他们跟领导间的桥梁，他们跟领导接触的机会可能有限，领导也无法知道他们每个人都干了什么，这就需要你这个中间人做好桥梁作用，你的工作职责很重要的一部分就是承上启下</li>
-<li>但是不要只报告好的，不好的也要说，有困难让领导知晓，这样他能了解你的工作，了解你的团队，会给你提供有效的帮助或建议，这也是你向上级学习的好机会</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[编写TestCase工具：xmind2testcase]]></title>
@@ -118,35 +22,6 @@
         <link href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
         </link>
         <updated>2020-04-13T11:36:23.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
-<h3 id="安装升级">安装&amp;升级</h3>
-<pre><code>pip3 install -u xmind2testcase
-</code></pre>
-<h3 id="基本使用">基本使用</h3>
-<pre><code># 命令行调用
-Usage:
- xmind2testcase [path_to_xmind_file] [-csv] [-xml] [-json]
-
-Example:
- xmind2testcase /path/to/testcase.xmind        =&gt; output testcase.csv、testcase.xml、testcase.json
- xmind2testcase /path/to/testcase.xmind -csv   =&gt; output testcase.csv
- xmind2testcase /path/to/testcase.xmind -xml   =&gt; output testcase.xml
- xmind2testcase /path/to/testcase.xmind -json  =&gt; output testcase.json
- 
-# web界面
-xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自定义端口
-</code></pre>
-<ul>
-<li>xmind导入禅道二次优化后文件夹</li>
-</ul>
-<pre><code># 替换路径为
-/Users/xxx/.pyenv/versions/py3.6.3/lib/python3.6/site-packages
-</code></pre>
-<ul>
-<li>xmind导入禅道用例模板<br>
-<img src="https://i.loli.net/2020/04/13/Vo48saf9KUAMviL.jpg" alt="20200413194051.jpg" loading="lazy"></li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[centOS7 安装pyenv]]></title>
@@ -154,47 +29,6 @@ xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自
         <link href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
         </link>
         <updated>2020-04-13T11:21:09.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
-<ul>
-<li>查看centOS7 版本</li>
-</ul>
-<pre><code>cat /etc/redhat-release
-</code></pre>
-<ul>
-<li>创建目录安装pyenv</li>
-</ul>
-<pre><code>mkdir ~/.pyenv
-git clone git://github.com/yyuu/pyenv.git   ~/.pyenv
-</code></pre>
-<ul>
-<li>配置环境变量</li>
-</ul>
-<pre><code>echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc  
-echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc  
-echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc  
-exec $SHELL -l
-</code></pre>
-<ul>
-<li>列出所有版本</li>
-</ul>
-<pre><code>pyenv install --list
-</code></pre>
-<ul>
-<li>安装python 3.6.3</li>
-</ul>
-<pre><code>pyenv install 3.6.3
-</code></pre>
-<ul>
-<li>全局使用</li>
-</ul>
-<pre><code>pyenv global 3.6.3
-</code></pre>
-<ul>
-<li>检查版本😃😃😃</li>
-</ul>
-<pre><code>python --version
-</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
@@ -202,134 +36,5 @@ exec $SHELL -l
         <link href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
         </link>
         <updated>2020-04-13T06:33:39.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
-<h3 id="运行环境">运行环境</h3>
-<ul>
-<li>ubuntu 16.04</li>
-<li>nginx</li>
-<li>php7.0</li>
-<li>mongodb</li>
-</ul>
-<h3 id="安装手册执行">安装手册&amp;执行</h3>
-<ul>
-<li>更新软件源列表地址</li>
-</ul>
-<pre><code>apt-get update
-</code></pre>
-<ul>
-<li>安装nginx</li>
-</ul>
-<pre><code>apt-get install -y nginx
-</code></pre>
-<ul>
-<li>安装php以及相关组件&amp;php7.0</li>
-</ul>
-<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
-</code></pre>
-<ul>
-<li>下载工程</li>
-</ul>
-<pre><code>cd /var/www
-git clone https://github.com/meihaoyidian/actionview actionview
-</code></pre>
-<ul>
-<li>安装依赖</li>
-</ul>
-<pre><code>cd actionview
-cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
-composer install --no-dev
-</code></pre>
-<ul>
-<li>执行配置脚本</li>
-</ul>
-<pre><code>sh config.sh
-</code></pre>
-<ul>
-<li>修改数据库连接，拷贝.env文件</li>
-</ul>
-<pre><code>cp .env.example .env
-
-DB_HOST=127.0.0.1
-DB_DATABASE=actionviewdb
-DB_USERNAME=actionview
-DB_PASSWORD=secret
-</code></pre>
-<ul>
-<li>执行db数据初始化脚本</li>
-</ul>
-<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
-</code></pre>
-<ul>
-<li>配置nginx</li>
-</ul>
-<pre><code>vim /etc/nginx/sites-enabled/default
-
-server {
-    listen 80;
-    listen [::]:80;
-
-    root /var/www/actionview/public;
-
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name localhost;
-
-    client_max_body_size 50M;
-
-    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
-
-    set $flag 0;
-    if (!-e $request_filename) { set $flag 1; }
-    if ($request_uri ~ ^/api) { set $flag 2; }
-
-    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
-    if ($flag = 2) { rewrite ^ /index.php break; }
-
-    location ~ /\.ht {
-        deny all;
-    }
-
-    location ~ \.php {
-        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
-        fastcgi_index  index.php;
-        include        fastcgi_params;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
-        try_files $uri =404;
-    }
-}
-</code></pre>
-<ul>
-<li>重新启动nginx&amp;php-fpm</li>
-</ul>
-<pre><code>service php7.0-fpm stop
-service php7.0-fpm start
-service nginx stop
-service nginx start
-</code></pre>
-<ul>
-<li>安装完成访问</li>
-</ul>
-<pre><code>http://xxx.xxx.xxx.xxx
-
-# 管理员登录账号/密码
-admin@action.view
-actionview
-</code></pre>
-<ul>
-<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
-</ul>
-<pre><code># crontab里添加
-* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
-</code></pre>
-<ul>
-<li>重启cron服务</li>
-</ul>
-<pre><code>service cron restart
-</code></pre>
-<h3 id="完成">完成😀😀😀</h3>
-<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
-]]></content>
     </entry>
 </feed>
