@@ -1,22 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://actionlefe.top</id>
-    <title>个人博客</title>
-    <updated>2020-04-15T06:01:32.453Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://actionlefe.top"/>
-    <link rel="self" href="https://actionlefe.top/atom.xml"/>
-    <subtitle>个人博客</subtitle>
-    <logo>https://actionlefe.top/images/avatar.png</logo>
-    <icon>https://actionlefe.top/favicon.ico</icon>
-    <rights>All rights reserved 2020, 个人博客</rights>
-    <entry>
-        <title type="html"><![CDATA[测试流程管理]]></title>
-        <id>https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/</id>
-        <link href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
-        </link>
-        <updated>2020-04-15T01:31:32.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>测试流程管理 | 个人博客</title>
+<link rel="shortcut icon" href="https://actionlefe.top/favicon.ico?v=1586930487711">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://actionlefe.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="测试流程管理 | 个人博客 - Atom Feed" href="https://actionlefe.top/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="如何管理一个测试团队
+
+建立测试规范、宣贯团队成员、团队培训计划
+
+测试的基础知识进行宣贯，将测试计划、用例编写、业务沉淀、测试工具使用、checklist等与绩效挂钩
+
+
+开始培养团队成员代码能力
+
+搭建、编写好接口测试框架、UI自动化测..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://actionlefe.top">
+  <img class="avatar" src="https://actionlefe.top/images/avatar.png?v=1586930487711" alt="">
+  </a>
+  <h1 class="site-title">
+    个人博客
+  </h1>
+  <p class="site-description">
+    个人博客
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              测试流程管理
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-15
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
 <ul>
 <li>建立测试规范、宣贯团队成员、团队培训计划
 <ul>
@@ -110,223 +191,93 @@
 <li>在日常的向上汇报中（不限形式），对于表现优秀的成员 要及时向上反馈，用事实说话，刷存在感，这样可以帮助团队成员在上级领导面前建立良好的印象，有助其晋升。因为你是他们跟领导间的桥梁，他们跟领导接触的机会可能有限，领导也无法知道他们每个人都干了什么，这就需要你这个中间人做好桥梁作用，你的工作职责很重要的一部分就是承上启下</li>
 <li>但是不要只报告好的，不好的也要说，有困难让领导知晓，这样他能了解你的工作，了解你的团队，会给你提供有效的帮助或建议，这也是你向上级学习的好机会</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[编写TestCase工具：xmind2testcase]]></title>
-        <id>https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/</id>
-        <link href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
-        </link>
-        <updated>2020-04-13T11:36:23.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="安装升级">安装&amp;升级</h3>
-<pre><code>pip3 install -u xmind2testcase
-</code></pre>
-<h3 id="基本使用">基本使用</h3>
-<pre><code># 命令行调用
-Usage:
- xmind2testcase [path_to_xmind_file] [-csv] [-xml] [-json]
 
-Example:
- xmind2testcase /path/to/testcase.xmind        =&gt; output testcase.csv、testcase.xml、testcase.json
- xmind2testcase /path/to/testcase.xmind -csv   =&gt; output testcase.csv
- xmind2testcase /path/to/testcase.xmind -xml   =&gt; output testcase.xml
- xmind2testcase /path/to/testcase.xmind -json  =&gt; output testcase.json
- 
-# web界面
-xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自定义端口
-</code></pre>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
 <ul>
-<li>xmind导入禅道二次优化后文件夹</li>
-</ul>
-<pre><code># 替换路径为
-/Users/xxx/.pyenv/versions/py3.6.3/lib/python3.6/site-packages
-</code></pre>
+<li>
 <ul>
-<li>xmind导入禅道用例模板<br>
-<img src="https://i.loli.net/2020/04/13/Vo48saf9KUAMviL.jpg" alt="20200413194051.jpg" loading="lazy"></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95%E5%9B%A2%E9%98%9F">如何管理一个测试团队</a></li>
+<li><a href="#%E5%88%B6%E5%AE%9A%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B">制定测试流程</a></li>
+<li><a href="#%E5%9B%A2%E9%98%9F%E4%BA%BA%E6%89%8D%E7%9A%84%E7%AE%A1%E7%90%86">团队人才的管理</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E9%A3%8E%E5%90%91%E6%A0%87">测试技术风向标</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E7%BB%A9%E6%95%88">关于绩效</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%90%91%E4%B8%8A%E6%B1%87%E6%8A%A5">如何向上汇报</a></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[centOS7 安装pyenv]]></title>
-        <id>https://actionlefe.top/post/centos7-an-zhuang-pyenv/</id>
-        <link href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
-        </link>
-        <updated>2020-04-13T11:21:09.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>查看centOS7 版本</li>
+</li>
 </ul>
-<pre><code>cat /etc/redhat-release
-</code></pre>
-<ul>
-<li>创建目录安装pyenv</li>
+</li>
 </ul>
-<pre><code>mkdir ~/.pyenv
-git clone git://github.com/yyuu/pyenv.git   ~/.pyenv
-</code></pre>
-<ul>
-<li>配置环境变量</li>
-</ul>
-<pre><code>echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc  
-echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc  
-echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc  
-exec $SHELL -l
-</code></pre>
-<ul>
-<li>列出所有版本</li>
-</ul>
-<pre><code>pyenv install --list
-</code></pre>
-<ul>
-<li>安装python 3.6.3</li>
-</ul>
-<pre><code>pyenv install 3.6.3
-</code></pre>
-<ul>
-<li>全局使用</li>
-</ul>
-<pre><code>pyenv global 3.6.3
-</code></pre>
-<ul>
-<li>检查版本😃😃😃</li>
-</ul>
-<pre><code>python --version
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
-        <id>https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
-        <link href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
-        </link>
-        <updated>2020-04-13T06:33:39.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="运行环境">运行环境</h3>
-<ul>
-<li>ubuntu 16.04</li>
-<li>nginx</li>
-<li>php7.0</li>
-<li>mongodb</li>
-</ul>
-<h3 id="安装手册执行">安装手册&amp;执行</h3>
-<ul>
-<li>更新软件源列表地址</li>
-</ul>
-<pre><code>apt-get update
-</code></pre>
-<ul>
-<li>安装nginx</li>
-</ul>
-<pre><code>apt-get install -y nginx
-</code></pre>
-<ul>
-<li>安装php以及相关组件&amp;php7.0</li>
-</ul>
-<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
-</code></pre>
-<ul>
-<li>下载工程</li>
-</ul>
-<pre><code>cd /var/www
-git clone https://github.com/meihaoyidian/actionview actionview
-</code></pre>
-<ul>
-<li>安装依赖</li>
-</ul>
-<pre><code>cd actionview
-cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
-composer install --no-dev
-</code></pre>
-<ul>
-<li>执行配置脚本</li>
-</ul>
-<pre><code>sh config.sh
-</code></pre>
-<ul>
-<li>修改数据库连接，拷贝.env文件</li>
-</ul>
-<pre><code>cp .env.example .env
 
-DB_HOST=127.0.0.1
-DB_DATABASE=actionviewdb
-DB_USERNAME=actionview
-DB_PASSWORD=secret
-</code></pre>
-<ul>
-<li>执行db数据初始化脚本</li>
-</ul>
-<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
-</code></pre>
-<ul>
-<li>配置nginx</li>
-</ul>
-<pre><code>vim /etc/nginx/sites-enabled/default
+              </div>
+            </div>
+          </article>
+        </div>
 
-server {
-    listen 80;
-    listen [::]:80;
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
+              <h3 class="post-title">
+                编写TestCase工具：xmind2testcase
+              </h3>
+            </a>
+          </div>
+        
 
-    root /var/www/actionview/public;
+        
 
-    index index.html index.htm index.nginx-debian.html;
+        <div class="site-footer">
+  个人博客
+  <a class="rss" href="https://actionlefe.top/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
 
-    server_name localhost;
+      </div>
+    </div>
 
-    client_max_body_size 50M;
+    <script>
+      hljs.initHighlightingOnLoad()
 
-    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-    set $flag 0;
-    if (!-e $request_filename) { set $flag 1; }
-    if ($request_uri ~ ^/api) { set $flag 2; }
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
-    if ($flag = 2) { rewrite ^ /index.php break; }
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-    location ~ /\.ht {
-        deny all;
-    }
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-    location ~ \.php {
-        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
-        fastcgi_index  index.php;
-        include        fastcgi_params;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
-        try_files $uri =404;
-    }
-}
-</code></pre>
-<ul>
-<li>重新启动nginx&amp;php-fpm</li>
-</ul>
-<pre><code>service php7.0-fpm stop
-service php7.0-fpm start
-service nginx stop
-service nginx start
-</code></pre>
-<ul>
-<li>安装完成访问</li>
-</ul>
-<pre><code>http://xxx.xxx.xxx.xxx
-
-# 管理员登录账号/密码
-admin@action.view
-actionview
-</code></pre>
-<ul>
-<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
-</ul>
-<pre><code># crontab里添加
-* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
-</code></pre>
-<ul>
-<li>重启cron服务</li>
-</ul>
-<pre><code>service cron restart
-</code></pre>
-<h3 id="完成">完成😀😀😀</h3>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
-]]></content>
-    </entry>
-</feed>
+    </script>
+  </body>
+</html>
