@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>bitBetter</title>
-    <updated>2020-04-15T06:11:45.840Z</updated>
+    <updated>2020-04-15T06:20:47.061Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -15,7 +15,8 @@
         <link href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
         </link>
         <updated>2020-04-15T01:31:32.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
 <ul>
 <li>建立测试规范、宣贯团队成员、团队培训计划
 <ul>
@@ -117,7 +118,8 @@
         <link href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
         </link>
         <updated>2020-04-13T11:36:23.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="安装升级">安装&amp;升级</h3>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="安装升级">安装&amp;升级</h3>
 <pre><code>pip3 install -u xmind2testcase
 </code></pre>
 <h3 id="基本使用">基本使用</h3>
@@ -152,7 +154,8 @@ xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自
         <link href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
         </link>
         <updated>2020-04-13T11:21:09.000Z</updated>
-        <content type="html"><![CDATA[<ul>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<ul>
 <li>查看centOS7 版本</li>
 </ul>
 <pre><code>cat /etc/redhat-release
@@ -199,7 +202,8 @@ exec $SHELL -l
         <link href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
         </link>
         <updated>2020-04-13T06:33:39.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="运行环境">运行环境</h3>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="运行环境">运行环境</h3>
 <ul>
 <li>ubuntu 16.04</li>
 <li>nginx</li>
@@ -325,7 +329,7 @@ actionview
 <pre><code>service cron restart
 </code></pre>
 <h3 id="完成">完成😀😀😀</h3>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
