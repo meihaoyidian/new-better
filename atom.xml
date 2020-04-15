@@ -2,13 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>bitBetter</title>
-    <updated>2020-04-15T06:21:58.804Z</updated>
+    <updated>2020-04-15T07:33:03.635Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
     <logo>https://actionlefe.top/images/avatar.png</logo>
     <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, bitBetter</rights>
+    <entry>
+        <title type="html"><![CDATA[python书写规范]]></title>
+        <id>https://actionlefe.top/post/python-shu-xie-gui-fan/</id>
+        <link href="https://actionlefe.top/post/python-shu-xie-gui-fan/">
+        </link>
+        <updated>2020-04-15T06:28:57.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[测试流程管理]]></title>
         <id>https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/</id>

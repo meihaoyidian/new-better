@@ -38,8 +38,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#%E5%AE%89%E8%A3%85%E5%8D%87%E7%BA%A7">安装&amp;升级</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">基本使用</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83">命名规范</a></li>
+<li><a href="#demopy">demo.py</a></li>
+<li><a href="#%E9%87%8A%E4%B9%89linux-%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%B8%80%E4%B8%AA-python-%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6%E5%BA%94%E8%AF%A5%E4%BB%A5%E4%B8%8B%E9%83%A8%E5%88%86%E7%BB%84%E6%88%90-windows-%E5%B9%B3%E5%8F%B0%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%81%E7%95%A5%E7%AC%AC%E4%B8%80%E9%A1%B9">释义：Linux 平台上，一个 python 源码文件应该以下部分组成。Windows 平台上，可以省略第一项</a></li>
+<li><a href="#%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%A3%B0%E6%98%8E">编码格式声明</a></li>
 </ul>
 </li>
 </ul>
@@ -90,67 +92,128 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">编写TestCase工具：xmind2testcase</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">python书写规范</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-04-13 / 1 min read
+          2020-04-15 / 3 min read
         </div>
         
         <div class="post-content yue">
           <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
-<h3 id="安装升级">安装&amp;升级</h3>
-<pre><code>pip3 install -u xmind2testcase
-</code></pre>
-<h3 id="基本使用">基本使用</h3>
-<pre><code># 命令行调用
-Usage:
- xmind2testcase [path_to_xmind_file] [-csv] [-xml] [-json]
+<h3 id="命名规范">命名规范</h3>
+<ul>
+<li>模块尽量使用小写命名，首字母保持小写，尽量不要使用下划线</li>
+<li>类名使用驼峰（GameClass）命名风格，首字母大写，私有类可用一个划线开头</li>
+<li>函数名一律小写，如有多个单词、用下划线隔开</li>
+<li>私有函数可用一个下划线开头</li>
+<li>变量名尽量小写， 如有多个单词，用下划线隔开</li>
+<li>常量采用全小写， 如有多个单词，使用下划线隔开</li>
+</ul>
+<h3 id="demopy">demo.py</h3>
+<pre><code># -*- coding:utf-8 -*-
+&quot;&quot;&quot;文档的说明（docstring），须以半角的句号、 问号或惊叹号结尾!
 
-Example:
- xmind2testcase /path/to/testcase.xmind        =&gt; output testcase.csv、testcase.xml、testcase.json
- xmind2testcase /path/to/testcase.xmind -csv   =&gt; output testcase.csv
- xmind2testcase /path/to/testcase.xmind -xml   =&gt; output testcase.xml
- xmind2testcase /path/to/testcase.xmind -json  =&gt; output testcase.json
- 
-# web界面
-xmind2testcase webtool 8000     本地启动web端用户转换工具，支持自定义端口
+本行之前应当空一行，继续完成关于文文档的说明
+如果文档说明可以在一行内有结果，结尾的三个双引号不需要换行；否则，就要下个下面这样
+&quot;&quot;&quot;
+
+import os, time
+import datetime
+import xlrd, xlwt, xlutils
+import youth_curl
+
+BASE_PATH = &quot;xxxxx/xxxxx/xxxxx&quot;
+LOG_FILE = u&quot;运行日志.log/txt&quot;
+
+
+class StudyPython(object):
+
+        &quot;&quot;&quot;描述: xxxx&quot;&quot;&quot;
+        def __init__(self, name, limit=100, **kwds):
+
+        &quot;&quot;&quot;构造函数!
+        name:   姓名
+        limit:  人数
+        kwds:   参数字典
+        &quot;&quot;&quot;
+        pass
+
+def craete_and_start():
+
+        &quot;&quot;&quot;描述: xxxx&quot;&quot;&quot;
+        pass
+
+
+if __name == '__main__':
+        # 说明xxx
+        start()
+</code></pre>
+<h3 id="释义linux-平台上一个-python-源码文件应该以下部分组成-windows-平台上可以省略第一项">释义：Linux 平台上，一个 python 源码文件应该以下部分组成。Windows 平台上，可以省略第一项</h3>
+<ul>
+<li>解释器声明</li>
+<li>编码格式声明</li>
+<li>模块注释或文档字符串</li>
+<li>模块导入</li>
+<li>常量和全局变量声明</li>
+<li>顶级定义（函数或类定义）</li>
+<li>执行代码</li>
+</ul>
+<h3 id="编码格式声明">编码格式声明</h3>
+<ul>
+<li>
+<p>开头已-<em>- coding: utf-8 -</em>-  或者  # coding = utf-8</p>
+<ul>
+<li><strong>注；Windows 平台上，编码格式声明必须位于 python 文件的第一行。Linux 平台上，编码格式声明通常位于 python 文件的第二行，第一行是 python 解释器的路径声明</strong></li>
+</ul>
+</li>
+<li>
+<p>缩进</p>
+<ul>
+<li>不要tab和空格共用。对于行连接的情况，一般使用4空格的悬挂式缩进</li>
+</ul>
+</li>
+</ul>
+<pre><code>    var_dict = {
+    'name': 'daben_chen',
+    'mail': 'xxxx@gmail.com'
+}
 </code></pre>
 <ul>
-<li>xmind导入禅道二次优化后文件夹</li>
-</ul>
-<pre><code># 替换路径为
-/Users/xxx/.pyenv/versions/py3.6.3/lib/python3.6/site-packages
-</code></pre>
+<li>注释
 <ul>
-<li>xmind导入禅道用例模板<br>
-<img src="https://i.loli.net/2020/04/13/Vo48saf9KUAMviL.jpg" alt="20200413194051.jpg" loading="lazy"></li>
+<li>#号后空一格，段落件用空行分开（同样需要#号）：</li>
+<li>行内注释，至少使用两个空格和语句分开</li>
+<li>比较重要的注释段, 使用多个等号隔开, 可以更加醒目, 突出重要性</li>
 </ul>
+</li>
+</ul>
+<pre><code>server= gogame(room, options)
+
+# ======================
+# 请勿在此处倾倒垃圾!!!
+# ======================
+
+
+if __name__ == '__main__':
+        server.run()
+</code></pre>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://actionlefe.top/JP1mXxzeg/">
-            <span class="flex-auto">测试能效</span>
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://actionlefe.top/eBKDcZ9VN/">
+            <span class="flex-auto">python</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  测试流程管理
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
+              <a href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
                 <h3 class="post-title">
-                  centOS7 安装pyenv
+                  测试流程管理
                   <i class="ri-arrow-right-line"></i>
                 </h3>
               </a>
