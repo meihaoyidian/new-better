@@ -30,33 +30,9 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/meihaoyidian" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="ri-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
+          <div class="toc-container hidden lg:block">
             
           </div>
         </div>
@@ -101,28 +77,114 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="ri-bookmark-line"></i> python
-        </h2>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">centOS7 安装pyenv</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-04-13 / 1 min read
+        </div>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-    <div class="content">
-      <a href="https://actionlefe.top/python-shu-xie-gui-fan/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">python书写规范</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2020-04-15 / 3 min read</div>
-    </div>
-  </section>
+        <div class="post-content yue">
+          <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<ul>
+<li>查看centOS7 版本</li>
+</ul>
+<pre><code>cat /etc/redhat-release
+</code></pre>
+<ul>
+<li>创建目录安装pyenv</li>
+</ul>
+<pre><code>mkdir ~/.pyenv
+git clone git://github.com/yyuu/pyenv.git   ~/.pyenv
+</code></pre>
+<ul>
+<li>配置环境变量</li>
+</ul>
+<pre><code>echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc  
+echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc  
+echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc  
+exec $SHELL -l
+</code></pre>
+<ul>
+<li>列出所有版本</li>
+</ul>
+<pre><code>pyenv install --list
+</code></pre>
+<ul>
+<li>安装python 3.6.3</li>
+</ul>
+<pre><code>pyenv install 3.6.3
+</code></pre>
+<ul>
+<li>全局使用</li>
+</ul>
+<pre><code>pyenv global 3.6.3
+</code></pre>
+<ul>
+<li>检查版本😃😃😃</li>
+</ul>
+<pre><code>python --version
+</code></pre>
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://actionlefe.top/JP1mXxzeg/">
+            <span class="flex-auto">测试能效</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://actionlefe.top/bian-xie-testcase-gong-ju-xmind2testcase/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  编写TestCase工具：xmind2testcase
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://actionlefe.top/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
+                <h3 class="post-title">
+                  需求&amp;任务&amp;问题跟踪工平台ActionView
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'fba216bef9718caa4128',
+    clientSecret: 'b53eba199c675fde29aec2e366b3b91d6d78e030',
+    repo: 'meihaoyidian.github.io',
+    owner: 'meihaoyidian',
+    admin: ['meihaoyidian'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
       </div>
     </div>

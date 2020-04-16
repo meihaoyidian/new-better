@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>bitBetter</title>
-    <updated>2020-04-16T12:04:09.303Z</updated>
+    <updated>2020-04-16T12:06:33.295Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -11,43 +11,43 @@
     <rights>All rights reserved 2020, bitBetter</rights>
     <entry>
         <title type="html"><![CDATA[logviwer-实时查看日志]]></title>
-        <id>https://actionlefe.top/post/logviwer-shi-shi-cha-kan-ri-zhi/</id>
-        <link href="https://actionlefe.top/post/logviwer-shi-shi-cha-kan-ri-zhi/">
+        <id>https://actionlefe.top/logviwer-shi-shi-cha-kan-ri-zhi/</id>
+        <link href="https://actionlefe.top/logviwer-shi-shi-cha-kan-ri-zhi/">
         </link>
         <updated>2020-04-16T11:50:31.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[python书写规范]]></title>
-        <id>https://actionlefe.top/post/python-shu-xie-gui-fan/</id>
-        <link href="https://actionlefe.top/post/python-shu-xie-gui-fan/">
+        <id>https://actionlefe.top/python-shu-xie-gui-fan/</id>
+        <link href="https://actionlefe.top/python-shu-xie-gui-fan/">
         </link>
         <updated>2020-04-15T06:28:57.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[测试流程管理]]></title>
-        <id>https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/</id>
-        <link href="https://actionlefe.top/post/ce-shi-liu-cheng-guan-li/">
+        <id>https://actionlefe.top/ce-shi-liu-cheng-guan-li/</id>
+        <link href="https://actionlefe.top/ce-shi-liu-cheng-guan-li/">
         </link>
         <updated>2020-04-15T01:31:32.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[编写TestCase工具：xmind2testcase]]></title>
-        <id>https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/</id>
-        <link href="https://actionlefe.top/post/bian-xie-testcase-gong-ju-xmind2testcase/">
+        <id>https://actionlefe.top/bian-xie-testcase-gong-ju-xmind2testcase/</id>
+        <link href="https://actionlefe.top/bian-xie-testcase-gong-ju-xmind2testcase/">
         </link>
         <updated>2020-04-13T11:36:23.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[centOS7 安装pyenv]]></title>
-        <id>https://actionlefe.top/post/centos7-an-zhuang-pyenv/</id>
-        <link href="https://actionlefe.top/post/centos7-an-zhuang-pyenv/">
+        <id>https://actionlefe.top/centos7-an-zhuang-pyenv/</id>
+        <link href="https://actionlefe.top/centos7-an-zhuang-pyenv/">
         </link>
         <updated>2020-04-13T11:21:09.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[需求&任务&问题跟踪工平台ActionView]]></title>
-        <id>https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
-        <link href="https://actionlefe.top/post/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
+        <id>https://actionlefe.top/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/</id>
+        <link href="https://actionlefe.top/xu-qiu-andren-wu-andwen-ti-gen-zong-gong-ping-tai-actionview/">
         </link>
         <updated>2020-04-13T06:33:39.000Z</updated>
     </entry>

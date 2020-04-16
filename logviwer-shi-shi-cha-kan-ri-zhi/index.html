@@ -30,34 +30,25 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/meihaoyidian" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="ri-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F">使用方式</a></li>
+<li><a href="#%E6%8B%93%E5%B1%95">拓展</a></li>
+<li><a href="#android%E5%BA%94%E7%94%A8log%E7%AD%89%E7%BA%A7">Android应用Log等级</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -101,28 +92,95 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="ri-bookmark-line"></i> python
-        </h2>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">logviwer-实时查看日志</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-04-16 / 2 min read
+        </div>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-    <div class="content">
-      <a href="https://actionlefe.top/python-shu-xie-gui-fan/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">python书写规范</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2020-04-15 / 3 min read</div>
-    </div>
-  </section>
+        <div class="post-content yue">
+          <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="前言">前言</h3>
+<ul>
+<li>移动端测试人员，在测试过程中需要查看实时log日志，方便自己测试的同时也可协助客户端研发更快定位问题</li>
+</ul>
+<h3 id="介绍">介绍</h3>
+<ul>
+<li>adb连接手机，实时查看logcat日志</li>
+<li>节省配置logcat</li>
+<li>可参数化配置</li>
+<li>可直接测试客户端埋点</li>
+</ul>
+<h3 id="使用方式">使用方式</h3>
+<pre><code>git clone https://github.com/meihaoyidian/logviwer
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+# 执行loger.py
+python loger.py xxxx(应用包名)
+</code></pre>
+<h3 id="拓展">拓展</h3>
+<pre><code># 快速获取当前应用包名
+adb shell dumpsys activity top | awk -F &quot; &quot; '/TASK/ {print $2}'
+
+# 过滤日志等级信息，--min-level('V', 'D', 'I', 'W', 'E', 'F', 'v', 'd', 'i', 'w', 'e', 'f')，不区分大小写
+python loger.py xxx(应用包名) --min-level &quot;E&quot;
+</code></pre>
+<h3 id="android应用log等级">Android应用Log等级</h3>
+<ul>
+<li>Log.v：这里的v代表Verbose，对应的log等级为VERVOSE。采用该等级的log，任何消息都会输出</li>
+<li>Log.d：这里的d代表Debug调试的意思，对应的log等级为DEBUG。采用该等级的log，除了VERBOSE级别的log外，剩余的4个等级的log都会被输出</li>
+<li>Log.i：这里的i代表information，为一般提示性的消息，对应的log等级为INFO。采用该等级的log，不会输出VERBOSE和DEBUG信息，只会输出剩余3个等级的信息</li>
+<li>Log.w：w代表warning警告信息，一般用于系统提示开发者需要优化android代码等场景，对应的等级为WARN。该级别log，只会输出WARN和ERROR的信息</li>
+<li>Log.e：e代表error错误信息，一般用于输出异常和报错信息。该级别的log，只会输出该级别信息。一般Android系统在输出crassh等致命信息的时候，都会采用该级别的log</li>
+<li>VERVOSE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR</li>
+</ul>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://actionlefe.top/python-shu-xie-gui-fan/">
+                <h3 class="post-title">
+                  python书写规范
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'fba216bef9718caa4128',
+    clientSecret: 'b53eba199c675fde29aec2e366b3b91d6d78e030',
+    repo: 'meihaoyidian.github.io',
+    owner: 'meihaoyidian',
+    admin: ['meihaoyidian'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
       </div>
     </div>

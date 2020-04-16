@@ -30,34 +30,23 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/meihaoyidian" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="ri-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83">运行环境</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C%E6%89%A7%E8%A1%8C">安装手册&amp;执行</a></li>
+<li><a href="#%E5%AE%8C%E6%88%90">完成😀😀😀</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -101,28 +90,193 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="ri-bookmark-line"></i> python
-        </h2>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">需求&amp;任务&amp;问题跟踪工平台ActionView</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-04-13 / 2 min read
+        </div>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-    <div class="content">
-      <a href="https://actionlefe.top/python-shu-xie-gui-fan/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">python书写规范</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
-      </div>
-      <div class="text-gray-400 text-sm font-light">2020-04-15 / 3 min read</div>
-    </div>
-  </section>
+        <div class="post-content yue">
+          <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="运行环境">运行环境</h3>
+<ul>
+<li>ubuntu 16.04</li>
+<li>nginx</li>
+<li>php7.0</li>
+<li>mongodb</li>
+</ul>
+<h3 id="安装手册执行">安装手册&amp;执行</h3>
+<ul>
+<li>更新软件源列表地址</li>
+</ul>
+<pre><code>apt-get update
+</code></pre>
+<ul>
+<li>安装nginx</li>
+</ul>
+<pre><code>apt-get install -y nginx
+</code></pre>
+<ul>
+<li>安装php以及相关组件&amp;php7.0</li>
+</ul>
+<pre><code>apt-get install -y php7.0 php-fpm php-mbstring php-gd php-mcrypt php-curl php-dom php-zip php-ldap php-mongodb
+</code></pre>
+<ul>
+<li>下载工程</li>
+</ul>
+<pre><code>cd /var/www
+git clone https://github.com/meihaoyidian/actionview actionview
+</code></pre>
+<ul>
+<li>安装依赖</li>
+</ul>
+<pre><code>cd actionview
+cp composer.phar /usr/local/bin/composer (如果composer已安装请忽略此步)
+composer install --no-dev
+</code></pre>
+<ul>
+<li>执行配置脚本</li>
+</ul>
+<pre><code>sh config.sh
+</code></pre>
+<ul>
+<li>修改数据库连接，拷贝.env文件</li>
+</ul>
+<pre><code>cp .env.example .env
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+DB_HOST=127.0.0.1
+DB_DATABASE=actionviewdb
+DB_USERNAME=actionview
+DB_PASSWORD=secret
+</code></pre>
+<ul>
+<li>执行db数据初始化脚本</li>
+</ul>
+<pre><code>mongorestore -h 127.0.0.1 -u actionview -p secret -d actionviewdb --drop ./dbdata
+</code></pre>
+<ul>
+<li>配置nginx</li>
+</ul>
+<pre><code>vim /etc/nginx/sites-enabled/default
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/actionview/public;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name localhost;
+
+    client_max_body_size 50M;
+
+    if (!-d $request_filename) { rewrite ^(.*)/$ /$1 permanent; }
+
+    set $flag 0;
+    if (!-e $request_filename) { set $flag 1; }
+    if ($request_uri ~ ^/api) { set $flag 2; }
+
+    if ($flag = 1) { rewrite ^(.*)$ /index.html break; }
+    if ($flag = 2) { rewrite ^ /index.php break; }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ \.php {
+        fastcgi_pass   unix:/run/php/php7.0-fpm.sock;
+        fastcgi_index  index.php;
+        include        fastcgi_params;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        try_files $uri =404;
+    }
+}
+</code></pre>
+<ul>
+<li>重新启动nginx&amp;php-fpm</li>
+</ul>
+<pre><code>service php7.0-fpm stop
+service php7.0-fpm start
+service nginx stop
+service nginx start
+</code></pre>
+<ul>
+<li>安装完成访问</li>
+</ul>
+<pre><code>http://xxx.xxx.xxx.xxx
+
+# 管理员登录账号/密码
+admin@action.view
+actionview
+</code></pre>
+<ul>
+<li>配置crontab：能发mail通知、为燃尽图展示提供数据、自动同步LDAP用户数</li>
+</ul>
+<pre><code># crontab里添加
+* * * * * php /var/www/actionview/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<ul>
+<li>重启cron服务</li>
+</ul>
+<pre><code>service cron restart
+</code></pre>
+<h3 id="完成">完成😀😀😀</h3>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/04/zFew7iJnR3VlqfY.jpg" alt="20200404220140.jpg" loading="lazy"></figure>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://actionlefe.top/JP1mXxzeg/">
+            <span class="flex-auto">测试能效</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://actionlefe.top/centos7-an-zhuang-pyenv/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  centOS7 安装pyenv
+                </h3>
+              </a>
+            </div>
+          
+
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'fba216bef9718caa4128',
+    clientSecret: 'b53eba199c675fde29aec2e366b3b91d6d78e030',
+    repo: 'meihaoyidian.github.io',
+    owner: 'meihaoyidian',
+    admin: ['meihaoyidian'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
       </div>
     </div>

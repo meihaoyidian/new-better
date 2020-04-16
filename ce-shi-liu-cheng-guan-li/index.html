@@ -1,0 +1,362 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>bitBetter</title>
+<meta name="description" content="" />
+<link rel="shortcut icon" href="https://actionlefe.top/favicon.ico?v=1587038791866">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://actionlefe.top/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://actionlefe.top">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://actionlefe.top/images/avatar.png?v=1587038791866" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">bitBetter</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95%E5%9B%A2%E9%98%9F">如何管理一个测试团队</a></li>
+<li><a href="#%E5%88%B6%E5%AE%9A%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B">制定测试流程</a></li>
+<li><a href="#%E5%9B%A2%E9%98%9F%E4%BA%BA%E6%89%8D%E7%9A%84%E7%AE%A1%E7%90%86">团队人才的管理</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E6%8A%80%E6%9C%AF%E9%A3%8E%E5%90%91%E6%A0%87">测试技术风向标</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E7%BB%A9%E6%95%88">关于绩效</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%90%91%E4%B8%8A%E6%B1%87%E6%8A%A5">如何向上汇报</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700"></div>
+    <a class="rss" href="https://actionlefe.top/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">测试流程管理</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-04-15 / 8 min read
+        </div>
+        
+        <div class="post-content yue">
+          <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="如何管理一个测试团队">如何管理一个测试团队</h3>
+<ul>
+<li>建立测试规范、宣贯团队成员、团队培训计划
+<ul>
+<li>测试的基础知识进行宣贯，将测试计划、用例编写、业务沉淀、测试工具使用、checklist等与绩效挂钩</li>
+</ul>
+</li>
+<li>开始培养团队成员代码能力
+<ul>
+<li>搭建、编写好接口测试框架、UI自动化测试框架，编写测试框架使用文档，进行针对性的培训、分享</li>
+</ul>
+</li>
+<li>针对性测试工具的改造/开发
+<ul>
+<li>同样也是先搭建好基础框架，然后一样的套路进行使用文档、培训、分享。经过上一步自动化代码的铺垫，都有了基础的代码能力，再经过一些培训、指导，在一个已有的框架基础上根据自己的业务需求写一些测试工具或者进行测试工具的二次改造。</li>
+</ul>
+</li>
+</ul>
+<h3 id="制定测试流程">制定测试流程</h3>
+<ul>
+<li>
+<p>为什么要制定测试流程？如何制定测试流程？</p>
+<ul>
+<li>起到总览性的作用，指导测试人员在一个项目测试各个环节过程中需要做哪些事情，一般会涉及到需求分析、测试计划、测试范围界定、测试用例设计、用例评审、冒烟测试、一轮测试（功能、接口、性能等）、二轮测试、预发验证、线上验证。各阶段的准入条件是什么？各阶段完成的定义是什么？如果准入条件没有或者没有达到，那当前阶段所花的时间、精力就可能远超预估</li>
+<li>帮助新人尽可能快速了解测试项目如何运转，融入团队</li>
+<li>没有测试流程的话，测试工作将杂乱无章，测试什么时候介入、会经历哪些阶段，每个阶段什么时候开始、什么时候结束，各阶段完成的定义是什么等等这些问题都没有答案</li>
+<li><strong>测试流程如下</strong><br>
+<img src="https://i.loli.net/2020/04/15/7jxocKQutMqn8sI.png" alt="Lark20200415135513.png" loading="lazy"></li>
+<li>测试规范设计到测试用例规范、Bug规范、Bug生命周期、测试计划、日总结规范
+<ul>
+<li>培养成员，让测试人员对测试工作有个基础认识，有好的测试思维</li>
+<li>便于一些数据的统计</li>
+<li>规范、模板制定了，所有人都能编写出高质量的测试文档，照着模板填空就行</li>
+</ul>
+</li>
+</ul>
+<h3 id="团队人才的管理">团队人才的管理</h3>
+<ul>
+<li>关注
+<ul>
+<li>关注团队成员，了解他们的性格特点、爱好、技术特长、沟通能力、合作能力，这样可以帮助我们“因材施教”。性格是很重要的一点，了解性格后我们可以在沟通的时候避免踩雷。比如有些人比较放的开，那开些玩笑什么的无所谓。而有的人比较敏感，在这类人面前说话得注意分寸，把握好度。有些人沟通能力差，容易情绪化、发火，这类人应尽量减少他们跟外部团队的合作，或者在他们跟外部合作的时候你需要多关注些，不然很可能得罪人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>定期会议</p>
+<ul>
+<li>定期会议可以采用自由形式，让每个人自由地表达，会上可以准备些水果、茶点，营造轻松的氛围，让每个人都畅所欲言，以了解他们最近的情况，包括心情。会议可以让每个人说下自己最近的工作，哪些做得好，哪些不好，如何改进。另外，定期会议是个听取意见或建议的好时机。一定要用开放的心态去听取听取了也要有行动去改进，这样成员才能保持提意见或建议的激情，积极参与团队建设，有主人翁精神。千万不要让成员提完意见但是从来就不改，那以后你也别怪人家消极，这都是你自己导致的</li>
+</ul>
+</li>
+<li>
+<p>人员培养及晋升通道</p>
+<ul>
+<li>结合他们自己的意愿，制定发展发向——如接口测试、性能测试、UI 自动化、测试策略等等，落实到绩效考核里面，关键结果明确。有绩效考核就会有压力，有压力才会有动力去实现，突破自我</li>
+<li>作为团队管理者，还有一个很重要的职责，就是如何帮助成员晋升。对比分析成员当前所在级别与上一级别之间的差距，还存在哪些不足，与晋升标准项一一对比，帮其分析出差异 list，然后列入到成员的绩效目标中（在绩效定下来之前需要征得其同意），在接下来的时间里，加以辅导，以帮助成员尽快达到晋升标准。在成员有晋升资格时，在晋升评审前，先帮他们看下 PPT，先把下关</li>
+</ul>
+</li>
+<li>
+<p>团建</p>
+</li>
+<li>
+<p>招聘</p>
+<ul>
+<li>明确招聘需求：招聘时要衡量好目前的短板是什么？需求是什么？如果缺少执行层的人，那就招实习生或刚毕业的就行。如果缺某一方向的人，那就需要招一个该方向有几年经验的。根据自己的需求去发布招聘信息。一个团队的人员组成最好是金字塔型的。金字塔上一层的人可以指导下一层人的工作</li>
+<li>面试准备：在面试前先了解侯选了，仔细看简历，提前做好准备，将想要了解的信息、要问的问题列出来，简历中列到自己不熟悉的领域，可以提前了解下，以免面试时不知对方所云</li>
+<li>面试： 进门后先问好，确认对方是侯选人，再自我介绍一下，然后就可以让对方做自我介绍，正式进入面试了。面试过程中，记得做些记录。面试差不多后，向对方介绍下公司及目前所做的项目。最后问下对方有没有什么问题，有什么想要了解的。这是面试的一些基本礼仪吧，会让对方对公司有个好印象</li>
+</ul>
+</li>
+</ul>
+<h3 id="测试技术风向标">测试技术风向标</h3>
+<ul>
+<li>
+<p>作为一个测试团队的管理者，要使下面的人信服，首要条件就是要有够硬的技术，能在成员遇到难题时协助他们解决或者提供解决思路，让成员在你的带领下可以不断地成长。当然也不是要求你什么都会，你可以通过团队所有成员形成技术闭环，使团队良性发展，<strong>如下图</strong><br>
+<img src="https://i.loli.net/2020/04/15/uBgWxJCYm2KTSVk.png" alt="Lark20200415135937.png" loading="lazy"></p>
+</li>
+<li>
+<p>专项组向各个业务组输出技术及支持，专项组的成员包括专职的性能测试工程师、接口测试工程师、UI 自动化测试工程师等，他们属于测试部门各自领域的“专家”，各自负责其对应的测试框架的开发及知识输出，输出到各业务团队。作为管理者，需要思考如何打造这样一个团队，可以通过内部培养，也可以通过人才招聘</p>
+</li>
+</ul>
+<h3 id="关于绩效">关于绩效</h3>
+<ul>
+<li>
+<p>季度/年初制定绩效目标，同级别的成员绩效差异不大，以求做到公平。过程中根据实际情况调整一次，季末/年底评定绩效。在这过程中，对于垫底的同学，需要及时给出提醒，并提供改进意见或改进计划。千万不要中间一直不关注、不督促，到年底的时候再给他打个垫底的，那这是你的工作不到位，对方也会不服</p>
+</li>
+<li>
+<p>绩效评定后就是谈话，好的当然好谈，大家都高兴。差的就要讲究谈话技巧，首先肯定他的工作，这季度/年度做了哪些事情、哪些表现好（所以平时要多了解成员的工作）。最后还是要谈到关键点，为什么给他这个分。要说明这不是某一个人的主观意见导致的，而是横向比对、绩效的关键结果、环评（各类与之有合作的人评定）出来的。最后再就是告知对方，根据这个结果我们会给你制定改进计划，观察期 x 个月等等，让他知道团队没有放弃他。当然，最后是去是留我们都尊重他</p>
+</li>
+</ul>
+<h3 id="如何向上汇报">如何向上汇报</h3>
+<ul>
+<li>在日常的向上汇报中（不限形式），对于表现优秀的成员 要及时向上反馈，用事实说话，刷存在感，这样可以帮助团队成员在上级领导面前建立良好的印象，有助其晋升。因为你是他们跟领导间的桥梁，他们跟领导接触的机会可能有限，领导也无法知道他们每个人都干了什么，这就需要你这个中间人做好桥梁作用，你的工作职责很重要的一部分就是承上启下</li>
+<li>但是不要只报告好的，不好的也要说，有困难让领导知晓，这样他能了解你的工作，了解你的团队，会给你提供有效的帮助或建议，这也是你向上级学习的好机会</li>
+</ul>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://actionlefe.top/Grp6gWeJv/">
+            <span class="flex-auto">测试管理</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://actionlefe.top/python-shu-xie-gui-fan/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  python书写规范
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://actionlefe.top/bian-xie-testcase-gong-ju-xmind2testcase/">
+                <h3 class="post-title">
+                  编写TestCase工具：xmind2testcase
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'fba216bef9718caa4128',
+    clientSecret: 'b53eba199c675fde29aec2e366b3b91d6d78e030',
+    repo: 'meihaoyidian.github.io',
+    owner: 'meihaoyidian',
+    admin: ['meihaoyidian'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://actionlefe.top/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
