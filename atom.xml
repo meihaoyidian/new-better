@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>美好一点</title>
-    <updated>2020-04-16T12:29:00.509Z</updated>
+    <updated>2020-04-27T08:44:04.537Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -10,11 +10,25 @@
     <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 美好一点</rights>
     <entry>
+        <title type="html"><![CDATA[Python Part1数据结构]]></title>
+        <id>https://actionlefe.top/python-jiao-cheng/</id>
+        <link href="https://actionlefe.top/python-jiao-cheng/">
+        </link>
+        <updated>2020-04-27T07:53:47.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[logviwer-实时查看日志]]></title>
         <id>https://actionlefe.top/logviwer/</id>
         <link href="https://actionlefe.top/logviwer/">
         </link>
         <updated>2020-04-16T11:50:31.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[python书写规范]]></title>
+        <id>https://actionlefe.top/python-shu-xie-gui-fan/</id>
+        <link href="https://actionlefe.top/python-shu-xie-gui-fan/">
+        </link>
+        <updated>2020-04-15T06:28:57.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[测试流程管理]]></title>
