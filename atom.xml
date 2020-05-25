@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://actionlefe.top</id>
     <title>美好一点</title>
-    <updated>2020-05-25T09:39:07.858Z</updated>
+    <updated>2020-05-25T09:56:25.827Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://actionlefe.top"/>
     <link rel="self" href="https://actionlefe.top/atom.xml"/>
@@ -10,7 +10,7 @@
     <icon>https://actionlefe.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 美好一点</rights>
     <entry>
-        <title type="html"><![CDATA[Python shutil文件模块使用]]></title>
+        <title type="html"><![CDATA[Python shutil文件模块 & os.walk() 方法]]></title>
         <id>https://actionlefe.top/python-shutil-wen-jian-mo-kuai-shi-yong/</id>
         <link href="https://actionlefe.top/python-shutil-wen-jian-mo-kuai-shi-yong/">
         </link>

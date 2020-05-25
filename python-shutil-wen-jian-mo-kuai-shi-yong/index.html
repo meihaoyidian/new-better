@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Python shutil文件模块使用 - 美好一点</title>
+<title>Python shutil文件模块 &amp; os.walk() 方法 - 美好一点</title>
 <link rel="shortcut icon" href="https://actionlefe.top/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://actionlefe.top/media/css/tailwind.css">
 <link rel="stylesheet" href="https://actionlefe.top/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Python shutil文件模块使用 - 美好一点 - Atom Feed" href="https://actionlefe.top/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Python shutil文件模块 &amp; os.walk() 方法 - 美好一点 - Atom Feed" href="https://actionlefe.top/atom.xml">
 
     
 
@@ -22,7 +22,7 @@ python内置函数，文件操作模块；主要包括对及目录的移动、�
 使用方法
 
 copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备可写权限；如果当前的d..." />
-  <meta property="og:title" content="Python shutil文件模块使用 - 美好一点">
+  <meta property="og:title" content="Python shutil文件模块 &amp; os.walk() 方法 - 美好一点">
   <meta property="og:description" content="
 shutil
 
@@ -36,7 +36,7 @@ copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备�
   <meta property="og:image" content="https://actionlefe.top/images/avatar.png">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="Python shutil文件模块使用 - 美好一点">
+  <meta name="twitter:title" content="Python shutil文件模块 &amp; os.walk() 方法 - 美好一点">
   <meta name="twitter:description" content="
 shutil
 
@@ -66,11 +66,11 @@ copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备�
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          Python shutil文件模块使用
+          Python shutil文件模块 &amp; os.walk() 方法
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2020-05-25 · 3 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2020-05-25 · 4 min read</div>
           
         </div>
         <div class="markdown mb-8" v-pre>
@@ -126,6 +126,43 @@ shutil.move(&quot;/Users/admin/Desktop/testFolder&quot;, &quot;/Users/admin/Docu
 # 删除一个目录
 shutil.rmtree(&quot;/Users/admin/Desktop/testFolder&quot;)
 </code></pre>
+<h3 id="oswalk-方法">os.walk() 方法</h3>
+<ul>
+<li>os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下。</li>
+<li>os.walk() 方法是一个简单易用的文件、目录遍历器。</li>
+</ul>
+<h3 id="参数释义">参数释义</h3>
+<ul>
+<li>os.walk(top, topdown=True, onerror=None, followlinks=False)</li>
+<li>top：是你所要遍历的目录的地址, 返回的是一个三元组(root,dirs,files)
+<ul>
+<li>root 所指的是当前正在遍历的这个文件夹的本身的地址</li>
+<li>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</li>
+<li>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</li>
+</ul>
+</li>
+<li>topdown：可选，为 True，则优先遍历 top 目录，否则优先遍历 top 的子目录(默认为开启)。如果 topdown 参数为 True，walk 会遍历top文件夹，与top 文件夹中每一个子目录</li>
+<li>onerror -- 可选，需要一个 callable 对象，当 walk 需要异常时，会调用</li>
+<li>followlinks -- 可选，如果为 True，则会遍历目录下的快捷方式(linux 下是软连接 symbolic link )实际所指的目录(默认关闭)，如果为 False，则优先遍历 top 的子目录。</li>
+</ul>
+<h3 id="使用例子-2">使用例子</h3>
+<pre><code># coding:utf-8
+
+'''
+@author:    daben_chen
+
+ExapleWalk.py os.walk()方法例子
+'''
+
+import os
+
+files = &quot;/Users/admin/Documents/work/mycode/code/share/file&quot;
+for root, dirs, files in os.walk(files, topdown=True):
+    for name in files:
+        print(os.path.join(root, name))
+    for name in dirs:
+        print(os.path.join(root, name))
+</code></pre>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -180,6 +217,9 @@ shutil.rmtree(&quot;/Users/admin/Desktop/testFolder&quot;)
 <li><a href="#shutil">shutil</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90">使用例子</a></li>
+<li><a href="#oswalk-%E6%96%B9%E6%B3%95">os.walk() 方法</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E9%87%8A%E4%B9%89">参数释义</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90-2">使用例子</a></li>
 </ul>
 </li>
 </ul>
