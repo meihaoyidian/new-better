@@ -15,10 +15,22 @@
     
 
   <meta name="description" content="
-..." />
+shutil
+
+python内置函数，文件操作模块；主要包括对及目录的移动、复制、打包、压缩（解压）、删除等操作。
+
+使用方法
+
+copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备可写权限；如果当前的d..." />
   <meta property="og:title" content="Python shutil文件模块使用 - 美好一点">
   <meta property="og:description" content="
-..." />
+shutil
+
+python内置函数，文件操作模块；主要包括对及目录的移动、复制、打包、压缩（解压）、删除等操作。
+
+使用方法
+
+copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备可写权限；如果当前的d..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://actionlefe.top/python-shutil-wen-jian-mo-kuai-shi-yong/" />
   <meta property="og:image" content="https://actionlefe.top/images/avatar.png">
@@ -26,7 +38,13 @@
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="Python shutil文件模块使用 - 美好一点">
   <meta name="twitter:description" content="
-...">
+shutil
+
+python内置函数，文件操作模块；主要包括对及目录的移动、复制、打包、压缩（解压）、删除等操作。
+
+使用方法
+
+copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备可写权限；如果当前的d...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://actionlefe.top/python-shutil-wen-jian-mo-kuai-shi-yong/">
 
@@ -52,11 +70,62 @@
         </h1>
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2020-05-25 · 0 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2020-05-25 · 3 min read</div>
           
         </div>
         <div class="markdown mb-8" v-pre>
           <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<h3 id="shutil">shutil</h3>
+<ul>
+<li>python内置函数，文件操作模块；主要包括对及目录的移动、复制、打包、压缩（解压）、删除等操作。</li>
+</ul>
+<h3 id="使用方法">使用方法</h3>
+<ul>
+<li>copyfile(src, dst) 从源src复制到dst中去，前提是目标地址是具备可写权限；如果当前的dst已存在的话就会被覆盖掉</li>
+<li>copymod(src, dst)只是会复制其权限其他的东西是不会被复制的</li>
+<li>copystat(src, dst)复制权限、最后访问时间、最后修改时间</li>
+<li>copy(src, dst)复制一个文件到一个文件或一个目录</li>
+<li>copy2(src, dst)在copy上的基础上再复制文件最后访问时间与修改时间也复制过来</li>
+<li>copytree(olddir, newdir, True/Flase)把olddir拷贝一份newdir，如果第3个参数是True，则复制目录时将保持文件夹下的符号连接，如果第3个参数是False，则将在复制的目录下生成物理副本来替代符号连接</li>
+</ul>
+<h3 id="使用例子">使用例子</h3>
+<pre><code># coding:utf-8
+
+'''
+@author:    daben_chen
+
+ExapleShutil.py shutil使用例子
+'''
+
+import shutil
+
+# 将文件内容拷贝到另一个文件中
+shutil.copyfileobj(open(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;r&quot;), open(&quot;/Users/admin/Desktop/new.txt&quot;, &quot;w&quot;))
+
+# 拷贝文件
+shutil.copyfile(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;/Users/admin/Desktop/old1.txt&quot;)
+
+# 仅拷贝权限。内容、组、用户均不变
+shutil.copyfile(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;/Users/admin/Desktop/old2.txt&quot;)
+
+# 复制权限、最后访问时间、最后修改时间
+shutil.copystat(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;/Users/admin/Desktop/old3.txt&quot;)
+
+# 复制一个文件到一个文件或一个目录
+shutil.copy(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;ord1.txt&quot;)
+
+# 在copy上的基础上再复制文件最后访问时间与修改时间也复制过来了
+shutil.copy2(&quot;/Users/admin/Desktop/old.txt&quot;, &quot;ord3.txt&quot;)
+
+# 把olddir拷贝一份newdir，如果第3个参数是True，则复制目录时将保持文件夹下的符号连接，如果第3个参数是False，则将在复制的目录下生成物理副本来替代符号连接
+shutil.copytree(&quot;/Users/admin/Desktop/testFolder&quot;, &quot;/Users/admin/Desktop/bbb&quot;)
+
+# 移动目录或文件
+shutil.move(&quot;/Users/admin/Desktop/testFolder&quot;, &quot;/Users/admin/Documents/testFolder&quot;)
+
+# 删除一个目录
+shutil.rmtree(&quot;/Users/admin/Desktop/testFolder&quot;)
+</code></pre>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -103,7 +172,20 @@
         </div>
       </div>
       <div class="post-toc-container">
-        
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#shutil">shutil</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B%E5%AD%90">使用例子</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
       </div>
     </div>
 
