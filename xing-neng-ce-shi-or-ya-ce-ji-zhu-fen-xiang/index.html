@@ -1,0 +1,533 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>性能测试 | 压测技术分享 - 美好一点</title>
+<link rel="shortcut icon" href="https://actionlefe.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://actionlefe.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://actionlefe.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="性能测试 | 压测技术分享 - 美好一点 - Atom Feed" href="https://actionlefe.top/atom.xml">
+
+    
+
+  <meta name="description" content="
+
+
+性能测试模型
+
+发现性能瓶颈，并调优；
+度量系统性能、容量预估；
+架构选型，部署方案择优；
+系统稳定性、健壮性验证；
+发现功能问题，价格计算错误、返回数据不稳定、数据丢失等问题
+
+
+
+
+常见性能指标
+
+平均响应时间；
+单位时间处理交易..." />
+  <meta property="og:title" content="性能测试 | 压测技术分享 - 美好一点">
+  <meta property="og:description" content="
+
+
+性能测试模型
+
+发现性能瓶颈，并调优；
+度量系统性能、容量预估；
+架构选型，部署方案择优；
+系统稳定性、健壮性验证；
+发现功能问题，价格计算错误、返回数据不稳定、数据丢失等问题
+
+
+
+
+常见性能指标
+
+平均响应时间；
+单位时间处理交易..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://actionlefe.top/xing-neng-ce-shi-or-ya-ce-ji-zhu-fen-xiang/" />
+  <meta property="og:image" content="https://actionlefe.top/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="性能测试 | 压测技术分享 - 美好一点">
+  <meta name="twitter:description" content="
+
+
+性能测试模型
+
+发现性能瓶颈，并调优；
+度量系统性能、容量预估；
+架构选型，部署方案择优；
+系统稳定性、健壮性验证；
+发现功能问题，价格计算错误、返回数据不稳定、数据丢失等问题
+
+
+
+
+常见性能指标
+
+平均响应时间；
+单位时间处理交易...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://actionlefe.top/xing-neng-ce-shi-or-ya-ce-ji-zhu-fen-xiang/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://actionlefe.top/media/css/prism-atom-dark.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://actionlefe.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      美好一点
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          性能测试 | 压测技术分享
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2020-06-02 · 3 min read</div>
+          
+            <a href="https://actionlefe.top/PEL8GbqHq/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              性能测试
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
+<ul>
+<li>
+<p>性能测试模型</p>
+<ul>
+<li>发现性能瓶颈，并调优；</li>
+<li>度量系统性能、容量预估；</li>
+<li>架构选型，部署方案择优；</li>
+<li>系统稳定性、健壮性验证；</li>
+<li>发现功能问题，价格计算错误、返回数据不稳定、数据丢失等问题<br>
+<img src="https://actionlefe.top/post-images/1591069037374.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>常见性能指标</p>
+<ul>
+<li>平均响应时间；</li>
+<li>单位时间处理交易笔数-TPS；</li>
+<li>交易成功率；</li>
+<li>CPU负载；</li>
+<li>内存使用率；</li>
+<li>IO负载；</li>
+<li>网络流量；</li>
+<li>数据库、redis等其他特性</li>
+</ul>
+</li>
+<li>
+<p>主流测试工具<br>
+<img src="https://actionlefe.top/post-images/1591069223127.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>JMeter</p>
+<ul>
+<li>
+<p>脚本编辑界面<br>
+<img src="https://actionlefe.top/post-images/1591069455939.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>场景设置界面<br>
+<img src="https://actionlefe.top/post-images/1591069514418.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>压测执行界面（No-Web：jmeter -n -t ip地址：端口号 xxx.jmx）<br>
+<img src="https://actionlefe.top/post-images/1591069590875.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>ngrinder压测平台</p>
+<ul>
+<li>
+<p>ngrinder脚本编写界面<br>
+<img src="https://actionlefe.top/post-images/1591070323160.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>ngrinder压测场景设置界面<br>
+<img src="https://actionlefe.top/post-images/1591070364108.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>ngrinder压测结果列表页面<br>
+<img src="https://actionlefe.top/post-images/1591070412425.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>压测脚本开发</p>
+<ul>
+<li>
+<p>创建http脚本和增强</p>
+<ul>
+<li>
+<p>步骤1-添加线程组<br>
+<img src="https://actionlefe.top/post-images/1591070510246.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>步骤2-添加http取样器<br>
+<img src="https://actionlefe.top/post-images/1591070551896.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>步骤3-添加请求参数<br>
+<img src="https://actionlefe.top/post-images/1591070578828.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>步骤4-设置检查点<br>
+<img src="https://actionlefe.top/post-images/1591070609746.jpg" alt="" loading="lazy"><br>
+<img src="https://actionlefe.top/post-images/1591070625913.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>创建dubbo脚本</p>
+<ul>
+<li>有2个方法，分别需要编码和不需要编码</li>
+<li>jmeter支持dubbo方法1-需要编码</li>
+<li>继承AbstractJavaSamplerClient，重写java sample<br>
+<img src="https://actionlefe.top/post-images/1591070702798.jpg" alt="" loading="lazy"><br>
+<img src="https://actionlefe.top/post-images/1591070707814.jpg" alt="" loading="lazy"><br>
+<img src="https://actionlefe.top/post-images/1591070713815.jpg" alt="" loading="lazy"></li>
+<li>jmeter支持dubbo方法2-需要编码<br>
+<img src="https://actionlefe.top/post-images/1591070745949.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>执行压测<br>
+<img src="https://actionlefe.top/post-images/1591070790599.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>性能监控和分析</p>
+<ul>
+<li>服务器4大硬件资源监控
+<ul>
+<li>
+<p>cpu监控<br>
+<img src="https://actionlefe.top/post-images/1591070855701.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>物理内存监控<br>
+<img src="https://actionlefe.top/post-images/1591070883068.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>磁盘io监控<br>
+<img src="https://actionlefe.top/post-images/1591070912303.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>网络监控<br>
+<img src="https://actionlefe.top/post-images/1591070986930.jpg" alt="" loading="lazy"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>木桶理论-性能瓶颈分析（木桶的盛水量取决于木桶壁上最短的木板）</p>
+<ul>
+<li>cpu</li>
+<li>内存</li>
+<li>磁盘IO</li>
+<li>网略</li>
+<li>数据库</li>
+<li>数据库慢查询</li>
+<li>jvm内存</li>
+<li>线程等待or阻塞</li>
+</ul>
+</li>
+<li>
+<p>常见性能测试分类<br>
+<img src="https://actionlefe.top/post-images/1591071707275.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>具体实例</p>
+<ul>
+<li>
+<p>cpu负载高案例分析<br>
+<img src="https://actionlefe.top/post-images/1591071755259.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>cpu负载高案例分析<br>
+<img src="https://actionlefe.top/post-images/1591071785394.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>cpu负载高问题定位<br>
+<img src="https://actionlefe.top/post-images/1591071818161.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>JVM内存问题定位-步骤1</p>
+<ul>
+<li>通过jstat –gc  pid  可以确认是否存在内存泄漏或者JVM内存溢出问题。得到该java进程的老年代回收情况，如下图所示，观察最近3次FULL GC之后OU变化，如果每次回收之后OU不变，基本可以确认存在内存泄漏或者溢出问题<br>
+<img src="https://actionlefe.top/post-images/1591071860044.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>JVM内存问题定位-步骤2</p>
+<ul>
+<li>明确存在内存泄漏的问题之后，接下来只要等OU接近于上限，执行jmap -dump:format=b,file=pid.hprof    pid  生成该JVM进程的内存快照文件heapdump<br>
+<img src="https://actionlefe.top/post-images/1591071898894.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<p>JVM内存问题定位-步骤3</p>
+<ul>
+<li>生成heapdump文件之后，使用IBM提供的ha456.jar文件进行分析，执行java  -Xmx2000M  -jar ha456.jar 命令，启动后选择该dump文件，定位到问题如下<br>
+<img src="https://actionlefe.top/post-images/1591071934948.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://actionlefe.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://actionlefe.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script type="application/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="application/javascript">
+
+  var gitalk = new Gitalk({
+    clientID: 'fba216bef9718caa4128',
+    clientSecret: 'b53eba199c675fde29aec2e366b3b91d6d78e030',
+    repo: 'meihaoyidian.github.io',
+    owner: 'meihaoyidian',
+    admin: ['meihaoyidian'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+    
+  
+</body>
+
+</html>
