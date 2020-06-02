@@ -18,13 +18,25 @@
 
 性能测试规范流程
 
-..." />
+性能测试的目的
+
+在测试环节提前发现系统性能瓶颈，并调优，规避性能风险；
+核心架构、核心模块提前压测，规避技术/项目风险；
+度量系统性能、容量预估、扩容方案；
+架构/技术方案选型，部署方案择优；
+系统稳定性、健壮性验..." />
   <meta property="og:title" content="性能测试汇总 - 美好一点">
   <meta property="og:description" content="
 
 性能测试规范流程
 
-..." />
+性能测试的目的
+
+在测试环节提前发现系统性能瓶颈，并调优，规避性能风险；
+核心架构、核心模块提前压测，规避技术/项目风险；
+度量系统性能、容量预估、扩容方案；
+架构/技术方案选型，部署方案择优；
+系统稳定性、健壮性验..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://actionlefe.top/xing-neng-ce-shi/" />
   <meta property="og:image" content="https://actionlefe.top/images/avatar.png">
@@ -35,7 +47,13 @@
 
 性能测试规范流程
 
-...">
+性能测试的目的
+
+在测试环节提前发现系统性能瓶颈，并调优，规避性能风险；
+核心架构、核心模块提前压测，规避技术/项目风险；
+度量系统性能、容量预估、扩容方案；
+架构/技术方案选型，部署方案择优；
+系统稳定性、健壮性验...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://actionlefe.top/xing-neng-ce-shi/">
 
@@ -63,11 +81,41 @@
         <div class="mb-8 flex flex-wrap">
           <div class="text-gray-400 text-sm mr-4">2020-06-02 · 1 min read</div>
           
+            <a href="https://actionlefe.top/PEL8GbqHq/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              性能测试
+            </a>
+          
         </div>
         <div class="markdown mb-8" v-pre>
           <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/2iTQ7rXVfBst49c.png" alt="Lark20200415141916.png" loading="lazy"></figure>
 <ul>
-<li>性能测试规范流程</li>
+<li>性能测试规范流程
+<ul>
+<li>性能测试的目的
+<ul>
+<li>在测试环节提前发现系统性能瓶颈，并调优，规避性能风险；</li>
+<li>核心架构、核心模块提前压测，规避技术/项目风险；</li>
+<li>度量系统性能、容量预估、扩容方案；</li>
+<li>架构/技术方案选型，部署方案择优；</li>
+<li>系统稳定性、健壮性验证；</li>
+</ul>
+</li>
+<li>测试策略
+<ul>
+<li>凡是C端接口新增/变更，必须经过线下压力测试（可以是开发自测，也可以是我们压测支持），并经过预发压测基线对比（tps不能小于基线值）</li>
+<li>把压测纳入项目整体排期，核心模块/架构提前压测，避免后期压测发现问题修复成本太高或者无法修复，吸取历史经验教训</li>
+</ul>
+</li>
+<li>性能测试流程
+<ul>
+<li>总体流程：开发自测 -&gt; 预发验收 -&gt; 线上全链路压测</li>
+<li>其中：开发自测(重点在于调优）-&gt; 预发验收（基线对比) -&gt; 线上全链路压测**<br>
+<img src="https://actionlefe.top/post-images/1591066869994.jpg" alt="" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
